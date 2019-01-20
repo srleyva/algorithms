@@ -4,8 +4,8 @@ package algorithms
 func BubbleSort(nums []int) []int {
 	unsorted := (len(nums) - 1)
 	for unsorted != 0 {
-		for i := range nums {
-			if i < (unsorted) && nums[i] > nums[i+1] {
+		for i := 0; i < unsorted; i++ {
+			if nums[i] > nums[i+1] {
 				buffer := nums[i]
 				nums[i] = nums[i+1]
 				nums[i+1] = buffer
