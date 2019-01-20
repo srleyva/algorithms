@@ -1,23 +1,23 @@
 package algorithms
 
 func DuplicateString(arr []string) bool {
-	for j, char := range arr {
-		for i, comp := range arr {
-			if j != i && comp == char {
-				return true
-			}
+	seen := make(map[string]bool)
+	for _, char := range arr {
+		if seen[char] == true {
+			return true
 		}
+		seen[char] = true
 	}
 	return false
 }
 
 func DuplicateNums(arr []int) bool {
-	for j, char := range arr {
-		for i, comp := range arr {
-			if j != i && comp == char {
-				return true
-			}
+	seen := make(map[int]bool)
+	for _, num := range arr {
+		if seen[num] == true {
+			return true
 		}
+		seen[num] = true
 	}
 	return false
 }
