@@ -20,7 +20,7 @@ func TestSearches(t *testing.T) {
 		},
 	}
 
-	t.Run("Test num isn't in array", func(t *testing.T) {
+	t.Run("Test num is in array", func(t *testing.T) {
 		num := 40
 		for _, search := range searches {
 			index := search.function(array, num)
