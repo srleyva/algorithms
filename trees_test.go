@@ -74,3 +74,20 @@ func TestNodePrintOrder(t *testing.T) {
 		t.Errorf("Expected: %s Actual: %s", expected, out)
 	}
 }
+
+func TestPathWithSum(t *testing.T) {
+	newNode := NewNode(5)
+	newNode.Insert(10)
+	newNode.Insert(4)
+	newNode.Insert(9)
+	newNode.Insert(2)
+	newNode.Insert(7)
+
+	if !newNode.PathWithSum(11) {
+		t.Errorf("Returned False where True expected")
+	}
+
+	if newNode.PathWithSum(-4) {
+		t.Errorf("Returned True Where False expected")
+	}
+}

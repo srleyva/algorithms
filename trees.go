@@ -42,3 +42,31 @@ func (n *Node) OrderPrint() {
 		n.Right.OrderPrint()
 	}
 }
+
+// PathWithSum tells if there is a path that adds up to passed param
+func (n *Node) PathWithSum(sum int) bool {
+	rval := false
+	if n == nil {
+		return false
+	}
+	sum -= n.Value
+
+	if n.Right == nil && n.Left == nil {
+		if sum == 0 {
+			return true
+		}
+	}
+
+	if n.Right != nil {
+		if n.Right.PathWithSum(sum) {
+			rval = true
+		}
+	}
+
+	if n.Left != nil {
+		if n.Left.PathWithSum(sum) {
+			rval = true
+		}
+	}
+	return rval
+}
